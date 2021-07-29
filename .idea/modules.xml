@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CoreAPI - Numaria/CoreAPI - Numaria.iml" filepath="$PROJECT_DIR$/CoreAPI - Numaria/CoreAPI - Numaria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SkyWars - Numaria/SkyWars - Numaria.iml" filepath="$PROJECT_DIR$/SkyWars - Numaria/SkyWars - Numaria.iml" />
     </modules>
   </component>
 </project>

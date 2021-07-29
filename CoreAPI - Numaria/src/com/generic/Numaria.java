@@ -17,6 +17,8 @@ public class Numaria extends JavaPlugin {
 
     private MySQLFile mySQLFile;
 
+    private NumariaService numariaService;
+
     public Numaria() {
     }
 
@@ -27,9 +29,14 @@ public class Numaria extends JavaPlugin {
         this.mySQLFile = new MySQLFile();
         this.mySQLFile.setStandard();
         this.mySQLFile.readData();
+        this.numariaService = new NumariaService();
         this.adapter = new Adapter(this.mySQLFile.host, this.mySQLFile.port, this.mySQLFile.user, this.mySQLFile.password, this.mySQLFile.database);
         this.adapter.connectDatabase();
 
+    }
+
+    public NumariaService getNumariaService() {
+        return numariaService;
     }
 
     public MySQLFile getMySQLFile() {

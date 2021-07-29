@@ -13,6 +13,8 @@ public class CorePlayer {
 
     private final ExecutorService executorService = Executors.newCachedThreadPool();
 
+    private boolean changed;
+
     private Color mainColor;
 
     private Color secondColor;
@@ -30,6 +32,7 @@ public class CorePlayer {
     }
 
     public CorePlayer(Player player) {
+        this.changed = false;
         this.player = player;
         if (!Numaria.getInstance().getAdapter().existsInTable("module_player", "uuid", player.getUniqueId().toString())) {
             this.createPlayer();
@@ -83,9 +86,11 @@ public class CorePlayer {
     };
 
     public void logout() {
-        this.setCoins(this.coins);
-        this.setMainColor(this.mainColor);
-        this.setSecondColor(this.secondColor);
+        if (changed) {
+            this.setCoins(this.coins);
+            this.setMainColor(this.mainColor);
+            this.setSecondColor(this.secondColor);
+        }
     };
 
     public Color getColor(String colorCode) {
@@ -177,6 +182,21 @@ public class CorePlayer {
 
     public ItemStack getDataStack() {
         return colorStack;
+    }
+
+    public void setDataCoins(int coins) {
+        if (!changed) this.changed = true;
+        this.coins = coins;
+    }
+
+    public void setDataMainColor(Color color) {
+        if (!changed) this.changed = true;
+        this.mainColor = color;
+    }
+
+    public void setDataSecondColor(Color color) {
+        if (!changed) this.changed = true;
+        this.secondColor = color;
     }
 
     public int getDataCoins() {

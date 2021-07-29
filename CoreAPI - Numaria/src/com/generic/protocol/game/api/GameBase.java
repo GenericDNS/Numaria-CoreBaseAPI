@@ -32,20 +32,36 @@ public abstract class GameBase extends JavaPlugin {
         return currentGameState;
     }
 
-    public abstract void onEnterStarting();
+    public void onEnterStarting() {
 
-    public abstract void onEnterVoted();
+    };
 
-    public abstract void onEnterRunning();
+    public void onEnterVoted() {
 
-    public abstract void onEnterFight();
+    };
 
-    public abstract void onEnterGameEnd();
+    public void onEnterRunning() {
 
-    public abstract void onEnterResetting();
+    };
 
-    public abstract void onEnterLobby();
+    public void onEnterFight() {
 
-    public abstract void onGameStatesChange();
+    };
+
+    public void onEnterGameEnd() {
+
+    };
+
+    public void onEnterResetting() {
+
+    };
+
+    public void onEnterLobby() {
+
+    };
+
+    public void onGameStatesChange() {
+
+    };
 
 }
