@@ -4,6 +4,7 @@ import com.generic.execute.ExecuteService;
 import com.generic.file.syntax.MySQLFile;
 import com.generic.mysql.Adapter;
 import com.generic.protocol.ServerData;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Numaria extends JavaPlugin {
@@ -28,6 +29,7 @@ public class Numaria extends JavaPlugin {
         this.mySQLFile.readData();
         this.adapter = new Adapter(this.mySQLFile.host, this.mySQLFile.port, this.mySQLFile.user, this.mySQLFile.password, this.mySQLFile.database);
         this.adapter.connectDatabase();
+
     }
 
     public MySQLFile getMySQLFile() {
